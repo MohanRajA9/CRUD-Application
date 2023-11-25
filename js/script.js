@@ -6,8 +6,8 @@ const mainURL = "https://6560722983aba11d99d0d3f1.mockapi.io/api/v1/posts";
 const needDeleted = document.getElementById("needDeleted");
 
 needDeleted.addEventListener("change", (event)=>{
-  console.log(needDeleted.checked)
-  renderMainBody()
+  console.log(needDeleted.checked);
+  renderMainBody();
 });
 
 const getData = async () =>{
@@ -37,7 +37,7 @@ const postData = async (post) => {
     },
   });
   const data = await res.json();
-  return data
+  return data;
 };
 
 const addLike = (postId) =>{
@@ -47,7 +47,7 @@ const addLike = (postId) =>{
   updateData(post.id,post).then((data) => {
     console.log(data);
     renderMainBody();
-  })
+  });
 };
 const renderMainBody = () => {
   
@@ -82,7 +82,7 @@ const renderMainBody = () => {
         </div>
       </div>`; 
     }).join("")});
-  }
+  };
   
 const deletePost = (postId) =>{
   const post = posts.filter((post) => post.id == postId)[0];
@@ -115,7 +115,3 @@ window.onload = () => {
   renderMainBody();
 };
 
-// document.addEventListener("contextmenu",(event) => {
-//     event.preventDefault()
-//     alert("Rignt click is not allowed");
-// })
